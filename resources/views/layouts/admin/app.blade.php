@@ -36,8 +36,8 @@
                     <!-- Dropdown Menu -->
                     <div x-show="open" @click.away="open = false" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                         <div class="py-1">
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Link 1</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Link 2</a>
+                            <a href="{{ route('admin-users')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">All users</a>
+                            <a href="{{ route('admin-users-create') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Create user</a>
                             <!-- Add more links as needed -->
                         </div>
                     </div>
