@@ -17,11 +17,10 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        Role::create([
-            'name' => 'Administrator'
-        ]);
-        Role::create([
-            'name' => 'Author'
+        $this->call([
+            AdminRoleSeeder::class,
+            AdminUserSeeder::class,
+            CategorySeeder::class,
         ]);
     }
 }
