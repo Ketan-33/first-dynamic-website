@@ -39,6 +39,7 @@ class AdminUsersController extends Controller
         $user = $request->all();
         $user['password'] = Hash::make('Admin123');
         User::create($user);
+        Session::flash('admin_flash', 'User created successfully.');
         return redirect()->route('admin-users');
     }
 

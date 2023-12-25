@@ -33,6 +33,7 @@ class CategoryController extends Controller
     {
         $category = $request->all();
         Category::create($category);
+        Session::flash('admin_flash', 'Category created successfully.');
         return redirect(route('admin-categories'));
     }
 
@@ -51,6 +52,7 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         if( $category == null) {
+            Session::flash('admin_flash', 'Category does not exist.');
             return redirect(route('admin-users'));
         }
         return view('admin.categories.edit', compact('category'));
@@ -64,6 +66,7 @@ class CategoryController extends Controller
         $category = Category::find($id);
         $input = $request->all();
         $category->update($input);
+        Session::flash('admin_flash', 'Category edited successfully.');
         return redirect(route('admin-categories'));
     }
 
@@ -74,6 +77,7 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         $category->delete();
+        Session::flash('admin_flash', 'Category deleted successfully.');
         return redirect(route('admin-categories'));
     }
 }

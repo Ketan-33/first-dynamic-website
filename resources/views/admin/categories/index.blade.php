@@ -4,10 +4,13 @@
     </x-slot>
 
     <div class="overflow-x-auto border rounded-lg border-gray-300 dark:border-gray-600">
+        @if(Session::has('admin_flash'))
+            <x-alert type="error" position="top-right">{{ Session('admin_flash') }}</x-alert>
+        @endif
         <table class="min-w-full divide-y divide-gray-300 dark:divide-gray-600">
             <thead class="bg-gradient-to-r from-teal-600 to-teal-800 text-white">
                 <tr>
-                    <th class="py-3 px-4 text-left">#</th>
+                    <th class="py-3 px-4 text-left">Id</th>
                     <th class="py-3 px-4 text-left">Name</th>
                     <th class="py-3 px-4 text-left">Created At</th>
                     <th class="py-3 px-4 text-left">Updated At</th>
@@ -19,7 +22,7 @@
                     @foreach ($categories as $category)
                         <tr class="hover:bg-gray-100 dark:hover:bg-gray-800">
                             <td class="py-2 px-4">{{ $category->id }}</td>
-                            <td class="py-2 px-4"><a href="{{ route('admin-categories-edit', $category->id)}}" class="text-blue-500 hover:underline">{{ $category->name }}</a></td>
+                            <td class="py-2 px-4">{{ $category->name }}</td>
                             <td class="py-2 px-4">{{ $category->created_at->diffForHumans() }}</td>
                             <td class="py-2 px-4">{{ $category->updated_at->diffForHumans() }}</td>
                             <td class="py-2 px-4">

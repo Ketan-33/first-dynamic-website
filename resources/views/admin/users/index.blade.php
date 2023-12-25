@@ -5,6 +5,9 @@
 
     <div class="overflow-x-auto border rounded-lg border-gray-300 dark:border-gray-600">
         <table class="min-w-full divide-y divide-gray-300 dark:divide-gray-600">
+             @if(Session::has('admin_flash'))
+            <x-alert type="error" position="top-right">{{ Session('admin_flash') }}</x-alert>
+        @endif
             <thead class="bg-gradient-to-r from-teal-600 to-teal-800 text-white">
                 <tr>
                     <th class="py-3 px-4 text-left">ID</th>
