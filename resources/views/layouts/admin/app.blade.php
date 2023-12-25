@@ -36,8 +36,10 @@
                     <!-- Dropdown Menu -->
                     <div x-show="open" @click.away="open = false" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                         <div class="py-1">
+                            @if(Auth::user()->isAdmin())
                             <a href="{{ route('admin-users')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">All users</a>
                             <a href="{{ route('admin-users-create') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Create user</a>
+                             @endif
                             <a href="{{ route('admin-categories')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Categories</a>
                             <a href="{{ route('admin-categories-create') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Create Category</a>
                             <!-- Add more links as needed -->
@@ -49,7 +51,10 @@
 
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <button type="submit" class="focus:outline-none text-purple-200 hover:underline py-2 px-4">{{ __('Log Out') }}</button>
+                    <a :href="route('logout')"
+                            class="block px-4 py-2 text-gray-100 hover:underline rounded-md cursor-pointer"
+                            onclick="event.preventDefault();this.closest('form').submit();">
+                                    {{ __('Log Out') }}</a>
                 </form>
             </nav>
         </div>
