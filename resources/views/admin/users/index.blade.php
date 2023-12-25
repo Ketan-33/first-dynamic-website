@@ -14,6 +14,7 @@
                     <th class="py-3 px-4 text-left">Active</th>
                     <th class="py-3 px-4 text-left">Created At</th>
                     <th class="py-3 px-4 text-left">Updated At</th>
+                    <th class="py-3 px-4 text-left">Actions</th> <!-- Added column for actions -->
                 </tr>
             </thead>
             <tbody class="text-gray-700 dark:text-gray-200">
@@ -27,6 +28,9 @@
                             <td class="py-2 px-4">{{ $user->active == 1 ? 'Yes' : 'No'}}</td>
                             <td class="py-2 px-4">{{ $user->created_at->diffForHumans() }}</td>
                             <td class="py-2 px-4">{{ $user->updated_at->diffForHumans() }}</td>
+                            <td class="py-2 px-4">
+                                <x-primary-button class="bg-teal-800 hover:bg-teal-900"><a href="{{ route('admin-users-edit', ['id' => $user->id]) }}" class="text-white">Edit</a></x-primary-button>
+                            </td>
                         </tr>
                     @endforeach
                 @endif

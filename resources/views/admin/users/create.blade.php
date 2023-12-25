@@ -22,6 +22,7 @@
             <div class="mb-4">
                 <x-input-label for="active" :value="__('Active')" />
                 <select name="active" id="active" class="rounded-md w-full">
+                    <option disabled selected>Select a status</option>
                     <option value="1">Yes</option>
                     <option value="2">No</option>
                 </select>
@@ -31,12 +32,13 @@
             <div class="mb-4">
                 <x-input-label for="role_id" :value="__('Role')" />
                 <select name="role_id" id="role_id" class="rounded-md w-full">
+                    <option disabled selected>Select a role</option>
                     @foreach ($roles as $role)
                         <option value="{{ $role->id }}">{{ $role->name }}</option>
                     @endforeach
                 </select>
             </div>
-
+   <x-form-errors />
             <div class="mb-4">
                 <x-primary-button type="submit" class="bg-teal-600 hover:bg-teal-800">Create</x-primary-button>
             </div>

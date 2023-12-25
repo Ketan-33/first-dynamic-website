@@ -7,6 +7,9 @@ use App\Models\User;
 use App\Models\Role;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use App\Http\Requests\AddUserRequest;
+use App\Http\Requests\EditUserRequest;
+
 class AdminUsersController extends Controller
 {
     /**
@@ -31,7 +34,7 @@ class AdminUsersController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AddUserRequest $request)
     {
         $user = $request->all();
         $user['password'] = Hash::make('Admin123');
@@ -51,15 +54,25 @@ class AdminUsersController extends Controller
      */
     public function edit(string $id)
     {
-        //
+         $user = User::find($id);
+        if( $user == null) {
+            Session::flash('admin_flash', 'User does not exist.');
+            return redirect(route('admin-users'));
+        }
+        $roles = Role::all();
+        return view('admin.users.edit', compact('roles', 'user'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(EditUserRequest $request, string $id)
     {
-        //
+        $user = User::find($id);
+        $input = $request->all();
+        $user->update($input);
+        Session::flash('admin_flash', 'User edited successfully.');
+        return redirect(route('admin-users'));
     }
 
     /**
