@@ -38,6 +38,8 @@
                         <div class="py-1">
                             <a href="{{ route('admin-users')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">All users</a>
                             <a href="{{ route('admin-users-create') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Create user</a>
+                            <a href="{{ route('admin-categories')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Categories</a>
+                            <a href="{{ route('admin-categories-create') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Create Category</a>
                             <!-- Add more links as needed -->
                         </div>
                     </div>
