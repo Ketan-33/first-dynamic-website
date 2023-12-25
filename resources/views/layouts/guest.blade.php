@@ -23,10 +23,22 @@
             </div>
              @endif
             {{ $slot }}
-            <footer class="bg-gray-700 text-white p-4">
-    <!-- Your footer content goes here -->
-    <p>this is footer</p>
-</footer>
+            <footer class="text-center bg-body-tertiary bg-gray-400 text-white">
+            <div class="container pt-4">
+                <section class="mb-4">
+                    <div class="logos flex justify-center p-3 gap-8 rounded-xl">
+                        <a href="#"><img class="h-8 w-8 mx-2" src='{{asset("images/github.svg")}}'  alt="github"></a>
+                        <a href="#"><img class="h-8 w-8 mx-2" src='{{asset("images/instagram.svg")}}'  alt="instagram"></a>
+                        <a href="#"><img class="h-8 w-8 mx-2" src='{{asset("images/linkedin.svg")}}'  alt="linkedin"></a>
+                        <a href="#"><img class="h-8 w-8 mx-2" src='{{asset("images/twitter.svg")}}'  alt="twitter"></a>
+                    </div>
+                </section>
+            </div>
+
+            <div>
+                <a class="text-center text-black p-3 font-bold" href="#">&copy; 2023 Copyright: KetanPardhi</a>
+            </div>
+        </footer>
 
         </div>
     </body>
