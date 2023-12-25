@@ -39,6 +39,7 @@ class AdminUsersController extends Controller
         $user = $request->all();
         $user['password'] = Hash::make('Admin123');
         User::create($user);
+        return redirect()->route('admin-users');
     }
 
     /**
