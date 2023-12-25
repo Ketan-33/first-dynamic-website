@@ -68,7 +68,7 @@
                 </div>
             </section>
             <div>
-                <p class="text-center text-gray-500">&copy; 2023 Your Company</p>
+                <p class="text-center text-gray-800">&copy; 2023 Copyright: KetanPardhi</p>
             </div>
         </div>
     </footer>
