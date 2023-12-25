@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminUsersController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -75,3 +76,26 @@ Route::get('/admin/categories/{id}/edit', [
 Route::patch('/admin/categories/{id}/edit', [
     CategoryController::class, 'update'
 ])->middleware('admin')->name('admin-categories-edit');
+
+// posts
+
+
+Route::get('/admin/posts', [
+    PostController::class, 'index'
+])->middleware('auth')->name('admin-posts');
+
+Route::get('/admin/posts/create', [
+    PostController::class, 'create'
+])->middleware('auth')->name('admin-posts-create');
+
+Route::post('/admin/posts/create', [
+    PostController::class, 'store'
+])->middleware('auth')->name('admin-posts-create');
+
+Route::get('/admin/posts/{id}/edit', [
+    PostController::class, 'edit'
+])->middleware('auth')->name('admin-posts-edit');
+
+Route::patch('/admin/posts/{id}/edit', [
+    PostController::class, 'update'
+])->middleware('auth')->name('admin-posts-edit');

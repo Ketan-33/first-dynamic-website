@@ -40,9 +40,10 @@
                             <a href="{{ route('admin-users')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">All users</a>
                             <a href="{{ route('admin-users-create') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Create user</a>
                              @endif
-                            <a href="{{ route('admin-categories')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Categories</a>
+                            <a href="{{ route('admin-categories')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">All Categories</a>
                             <a href="{{ route('admin-categories-create') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Create Category</a>
-                            <!-- Add more links as needed -->
+                            <a href="{{ route('admin-posts')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">All Posts</a>
+                            <a href="{{ route('admin-posts-create') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Create Post</a>
                         </div>
                     </div>
                 </div>
