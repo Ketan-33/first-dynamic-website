@@ -6,7 +6,7 @@
     <div class="overflow-x-auto border rounded-lg border-gray-300 dark:border-gray-600">
         <table class="min-w-full divide-y divide-gray-300 dark:divide-gray-600">
              @if(Session::has('admin_flash'))
-            <x-alert type="error" position="top-right">{{ Session('admin_flash') }}</x-alert>
+            <x-alert type="success" position="top-right">{{ Session('admin_flash') }}</x-alert>
         @endif
             <thead class="bg-gradient-to-r from-teal-600 to-teal-800 text-white">
                 <tr>
@@ -40,5 +40,5 @@
             </tbody>
         </table>
     </div>
-    <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">{{ $users->links() }}</div>
+
 </x-admin-layout>
