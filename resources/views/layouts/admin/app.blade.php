@@ -14,6 +14,9 @@
 
     <!-- Styles -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @if(isset($scripts))
+        {{ $scripts }}
+        @endif
 </head>
 
 <body class="font-roboto antialiased bg-gray-100 text-gray-800 min-h-screen flex flex-col">

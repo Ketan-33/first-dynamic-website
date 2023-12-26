@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -34,6 +35,8 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $post = $request->all();
+        $post['user_id'] = Auth::user()->id;
+        $post['image_id'] = 0;
         Post::create($post);
         Session::flash('admin_flash', 'Post created successfully.');
         return redirect(route('admin-posts'));
@@ -58,7 +61,7 @@ class PostController extends Controller
             return redirect(route('admin-posts'));
         }
         $categories = Category::all();
-        return view('admin.posts.edit', compact('categories'));
+        return view('admin.posts.edit', compact('categories', 'post'));
     }
 
     /**

@@ -8,7 +8,7 @@
         <!-- Title -->
         <div class="p-2">
             <label for="name">{{ __('Title') }}</label>
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('title')" required autofocus autocomplete="title" />
+           <x-text-input id="title" class="block mt-1 w-full" type="text" name="title" required autofocus autocomplete="title" />
         </div>
 
         <!-- Category -->
@@ -24,10 +24,10 @@
 
         <!-- Content -->
         <div class="p-2">
-            <label for="content">{{ __('Content') }}</label>
-            <textarea id="content"
+            <label for="content1">{{ __('Content') }}</label>
+            <textarea id="content1"
                 class="block mt-1 w-full rounded"
-                name="content" :value="old('title')"
+                name="content"
                 rows="6"
                 required autofocus></textarea>
         </div>
@@ -35,7 +35,9 @@
         <x-form-errors />
 
         <div class="block p-2">
-            <x-primary-button type="submit">Create</x-primary-button>
+            <x-primary-button type="submit" class="bg-teal-600 hover:bg-teal-900">
+                {{ __('Create') }}
+            </x-primary-button>
         </div>
 
     </form>
