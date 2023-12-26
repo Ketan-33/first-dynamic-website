@@ -68,21 +68,22 @@
           {{$slot}}
         </main>
     </div>
-    <footer class="text-center bg-body-tertiary bg-gray-400 text-white mt-8 py-4">
-        <div class="container mx-auto">
-            <section class="mb-4">
-                <div class="logos flex justify-center p-3 gap-8 rounded-xl">
-                    <a href="#"><img class="h-8 w-8 mx-2" src='{{asset("images/github.svg")}}'  alt="github"></a>
-                    <a href="#"><img class="h-8 w-8 mx-2" src='{{asset("images/instagram.svg")}}'  alt="instagram"></a>
-                    <a href="#"><img class="h-8 w-8 mx-2" src='{{asset("images/linkedin.svg")}}'  alt="linkedin"></a>
-                    <a href="#"><img class="h-8 w-8 mx-2" src='{{asset("images/twitter.svg")}}'  alt="twitter"></a>
-                </div>
-            </section>
-            <div>
-                <p class="text-center text-gray-800">&copy; 2023 Copyright: KetanPardhi</p>
+    <!-- Footer -->
+        <footer class="text-center bg-gray-400 text-white p-8 mt-8 ">
+            <div class="container">
+                <section class="mb-4">
+                    <div class="logos flex justify-center p-3 gap-8">
+                        <a href="#" class="transition duration-300 transform hover:scale-110"><img class="h-10 w-10" src='{{ asset("images/github.svg") }}' alt="github"></a>
+                        <a href="#" class="transition duration-300 transform hover:scale-110"><img class="h-10 w-10" src='{{ asset("images/instagram.svg") }}' alt="instagram"></a>
+                        <a href="#" class="transition duration-300 transform hover:scale-110"><img class="h-10 w-10" src='{{ asset("images/linkedin.svg") }}' alt="linkedin"></a>
+                        <a href="#" class="transition duration-300 transform hover:scale-110"><img class="h-10 w-10" src='{{ asset("images/twitter.svg") }}' alt="twitter"></a>
+                    </div>
+                </section>
             </div>
-        </div>
-    </footer>
+            <div>
+                <p class="text-center text-gray-900">&copy; {{ date('Y') }} Copyright: KetanPardhi</p>
+            </div>
+        </footer>
 </body>
 
 </html>
