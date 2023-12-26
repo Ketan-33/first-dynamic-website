@@ -8,7 +8,8 @@ use Illuminate\Support\Str;
 class WelcomeController extends Controller
 {
     public function index() {
-        $posts = Post::orderBy('created_at', 'desc')->take(9)->get();
+        $posts = Post::orderBy('created_at', 'asc')->take(9)->get();
+        $posts = Post::latest()->paginate(9);
         return view('welcome', compact('posts'));
     }
 
