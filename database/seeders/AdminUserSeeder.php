@@ -30,7 +30,7 @@ class AdminUserSeeder extends Seeder
 
         $faker = Faker::create();
 
-        for ($i = 1; $i < 10; $i++) {
+        for ($i = 1; $i < 20; $i++) {
             $admin = new User;
             $admin->name = $faker->name;
             $admin->email = $faker->email;
