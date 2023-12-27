@@ -44,7 +44,7 @@
                     </a>
                 @endif
 
-                <x-primary-button class="ms-3">
+                <x-primary-button class="ms-3 bg-purple-600 hover:bg-purple-800">
                     {{ __('Log in') }}
                 </x-primary-button>
             </div>

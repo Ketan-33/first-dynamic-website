@@ -10,7 +10,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             @forelse ($posts as $post)
-                <div class="bg-white p-6 rounded-lg shadow-md border border-gray-300 transition-transform transform hover:shadow-lg">
+                <div class="bg-white p-6 rounded-lg shadow-md border border-teal-600 transition-transform transform hover:shadow-lg">
                     <h2 class="text-2xl font-semibold mb-4 text-center text-gray-900">{{ $post->title }}</h2>
                     <h3 class="text-xl font-semibold mb-4 text-teal-600">{{ $post->category->name }}</h3>
                     <p class="text-gray-700 mb-6">{{ Str::limit($post->content, 150) }}</p>
